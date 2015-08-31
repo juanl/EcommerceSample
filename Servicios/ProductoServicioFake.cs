@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio.Entidades;
+using Infraestructura.Context;
 
 namespace Servicios
 {
     class ProductoServicioFake : IProductoServicio
     {
+        Contexto _context = new Contexto();
         public ResultadoOperacion BorrarProducto(Producto producto)
         {
-
             throw new NotImplementedException();
         }
 
