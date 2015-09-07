@@ -12,7 +12,7 @@ namespace Dominio.Entidades
     public string CategoriaNombre { get; set; }
 
     [Display(Name = "Product Description")]
-    public string Descripcion { get; set; }
+    public string Descripcion { get; set; } 
 
     public virtual ICollection<Producto> Producto { get; set; }
   }

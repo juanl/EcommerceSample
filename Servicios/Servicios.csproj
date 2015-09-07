@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaServicio.cs" />
+    <Compile Include="DTOs\CategoriaDTO.cs" />
+    <Compile Include="DTOs\ProductoDTO.cs" />
     <Compile Include="ICategoriaServicio.cs" />
     <Compile Include="IProductoServicio.cs" />
+    <Compile Include="ProductoServicio.cs" />
     <Compile Include="ProductoServicioFake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultadoOperacion.cs" />
@@ -50,6 +61,14 @@
       <Project>{d53c0279-35f1-444a-9b6e-7cbbb14ddf3c}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Infraestructura.csproj">
+      <Project>{0e95d024-611f-4d66-8dad-568dc534aad5}</Project>
+      <Name>Infraestructura</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
