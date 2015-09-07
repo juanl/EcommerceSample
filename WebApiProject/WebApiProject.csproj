@@ -199,6 +199,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Code\CarritoCompra.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarritoCompraController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
@@ -285,6 +286,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{d53c0279-35f1-444a-9b6e-7cbbb14ddf3c}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Servicios\Servicios.csproj">
       <Project>{da1f5a71-f4ca-482e-a3aa-30eeec19d31c}</Project>
       <Name>Servicios</Name>
