@@ -1,4 +1,5 @@
 ﻿using Dominio.Entidades;
+using Servicios.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace Servicios
 {
     interface IProductoServicio
     {
-        IList<Producto> ObtenerPorDescripcion(string cadena);
-        IList<Producto> ObtenerPorCategoria(Categoria categoria);
-        Producto ObtenerPorId(int productoId);
-        IList<Producto> ObtenerTodos();
-        ResultadoOperacion GuardarProducto(Producto producto);
-        ResultadoOperacion BorrarProducto(Producto producto);
+        IList<ProductoDTO> ObtenerPorDescripcion(string cadena);
+        IList<ProductoDTO> ObtenerPorCategoria(CategoriaDTO categoria);
+        ProductoDTO ObtenerPorId(int productoId);
+        IList<ProductoDTO> ObtenerTodos();
+        ResultadoOperacion GuardarProducto(ProductoDTO _productoDTO);
+        ResultadoOperacion EditarProducto(ProductoDTO _productoDTO);
+        ResultadoOperacion BorrarProducto(ProductoDTO _productoDTO);
     }
 }

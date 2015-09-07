@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\CategoriaDTO.cs" />
+    <Compile Include="DTOs\ProductoDTO.cs" />
     <Compile Include="ICategoriaServicio.cs" />
     <Compile Include="IProductoServicio.cs" />
     <Compile Include="CategoriaServicio.cs" />
