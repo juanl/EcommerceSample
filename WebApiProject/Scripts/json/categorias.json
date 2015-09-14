@@ -1,0 +1,14 @@
+[
+	{id:1,
+	nombre:"Gaseosas"
+	},
+	{id:2,
+	nombre:"Comestibles"
+	},
+	{id:3,
+	nombre:"Cosas"
+	},
+	{id:4,
+	nombre:"Otras"
+	}
+]

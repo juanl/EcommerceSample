@@ -1,0 +1,22 @@
+[
+	{id:1,
+	nombre:"Coca",
+	precio:2.3,
+	descripcion:"Pruebassssssssss"
+	},
+	{id:2,
+	nombre:"Fanta",
+	precio:3.4,
+	descripcion:"Pruebassssssssss"
+	},
+	{id:3,
+	nombre:"Alfajor",
+	precio:2.1,
+	descripcion:"Pruebassssssssss"
+	},
+	{id:4,
+	nombre:"Lavandina",
+	precio:2.2,
+	descripcion:"Pruebassssssssss"
+	},
+]
