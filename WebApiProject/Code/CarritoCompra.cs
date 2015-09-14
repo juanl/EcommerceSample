@@ -54,56 +54,44 @@ namespace WebApiProject.Code
             this.Productos.Add(item);
         }
 
-/*        private void AumentarCantidad(ElementoCarrito item)
-        {
-            foreach (ElementoCarrito producto in this.Productos)
-            {
-                if (producto.CompareTo(item) > 0)
-                    producto.Cantidad++;
-            }
-        }
-        */
+        /*        private void AumentarCantidad(ElementoCarrito item)
+                {
+                    foreach (ElementoCarrito producto in this.Productos)
+                    {
+                        if (producto.CompareTo(item) > 0)
+                            producto.Cantidad++;
+                    }
+                }
+                */
         private bool ExisteElemento(ElementoCarrito item)
         {
-            foreach (ElementoCarrito producto in this.Productos)
-            {
-                if (producto.CompareTo(item) > 0)
-                    return true;
-            }
-            return false;
+            return Productos.Any(p => p.ProductoId == item.ProductoId);
         }
 
         public ResultadoOperacion AumentarCantidad(ElementoCarrito item, int cantidad)
         {
             ResultadoOperacion mensaje = new ResultadoOperacion();
-            foreach (ElementoCarrito producto in this.Productos)
+
+            var prod = Productos.SingleOrDefault(p => p.ProductoId == item.ProductoId);
+            if (prod != null)
             {
-                if (producto.CompareTo(item) > 0)
+                prod.Cantidad += cantidad;
+                if (prod.Cantidad <= 0)
                 {
-                    producto.Cantidad += cantidad;
-                    if (producto.Cantidad <= 0)
-                    {
-                        mensaje = EliminarProducto(item);
-                    }
+                    mensaje = EliminarProducto(item);
                 }
-                else
-                {
-                    mensaje.Mensaje = "No existe el producto en el carrito de compra";
-                    mensaje.Resultado = Resultado.Error;
-                }
+            }
+            else
+            {
+                mensaje.Mensaje = "No existe el producto en el carrito de compra";
+                mensaje.Resultado = Resultado.Error;
             }
             return mensaje;
         }
 
         public ResultadoOperacion EliminarProducto(ElementoCarrito item)
         {
-            foreach (ElementoCarrito producto in this.Productos)
-            {
-                if (producto.CompareTo(item) > 0)
-                {
-                    this.Productos.Remove(item);
-                }
-            }
+            Productos.Remove(item);
             return new ResultadoOperacion() { };
         }
         public IList<ElementoCarrito> ListarProductos()
