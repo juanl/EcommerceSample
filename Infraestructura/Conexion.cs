@@ -9,7 +9,7 @@ namespace Infraestructura
     public static class Conexion
     {
 
-        private const string _servidor = @"JUAN-PC\SQLEXPRESS";
+        private const string _servidor = @".\SQLEXPRESS";
         private const string _baseDatos = "Ecommerce";
 
         public static string CadenaConexion
