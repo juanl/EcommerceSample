@@ -34,10 +34,11 @@
 
     <div class="row" >
         @*Repetir por Categoria*@
+        <p class="lead">Categorias</p>
         <div class="col-md-3" ng-controller="catlistController">
             <p class="lead"></p>
             <div class="list-group">
-                <a href="#" class="list-group-item" id="{{categoria.id}}" ng-repeat="categoria in categorias">{{categoria.nombre}}</a>
+                <a href="#" class="list-group-item" id="{{categoria.CategoriaID}}" ng-repeat="categoria in categorias" ng-bind="categoria.CategoriaNombre"></a>
             </div>
         </div>
 
@@ -68,18 +69,19 @@
                 </div>
 
             </div>
+            
 
             <div class="row">
                 @*Repetir por producto*@
                 <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="producto in productos">
                     <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
+                        <img src="{{producto.ImagenUbicacion}}" alt="" style="width:320px;height:150px">
                         <div class="caption">
-                            <h4 class="pull-right">{{producto.precio}}</h4>
+                            <h4 class="pull-right" ng-bind="producto.ProductoPrecio"></h4>
                             <h4>
-                                <a href="#">{{producto.nombre}}</a>
+                                <a href="#" ng-bind="producto.ProductoNombre"></a>
                             </h4>
-                            <p>{{producto.descripcion}} <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            <p ng-bind="producto.Descripcion"><a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                         </div>
                         <div class="ratings">
                             <p class="pull-right">15 reviews</p>
@@ -90,6 +92,7 @@
                                 <span class="glyphicon glyphicon-star"></span>
                                 <span class="glyphicon glyphicon-star"></span>
                             </p>
+                            
                         </div>
                     </div>
                 </div>

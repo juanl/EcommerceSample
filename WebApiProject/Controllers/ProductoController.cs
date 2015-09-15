@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace WebApiProject.Controllers
 {
-    [Authorize]
+    
     [RoutePrefix("api/Producto")]
     public class ProductoController : ApiController
     {
@@ -33,6 +33,7 @@ namespace WebApiProject.Controllers
             ProductoDTO producto = serv.ObtenerPorId(productoId);
             return producto;
         }
+        [HttpGet]
         public IList<ProductoDTO> ObtenerTodos()
         {
             ProductoServicio serv = new ProductoServicio();

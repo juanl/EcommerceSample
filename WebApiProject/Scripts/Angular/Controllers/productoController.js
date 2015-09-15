@@ -2,36 +2,12 @@
     "prodlistController", ["$scope", "$location", "remoteResources",
         function ($scope, $location, remoteResources) {
 
-            //$scope.url = "http://localhost:53480/Scripts/json/productos.json";
-            $scope.productos = [
-	                                {
-	                                    id: 1,
-	                                    nombre: "Coca",
-	                                    precio: 2,
-	                                    descripcion: "Pruebassssssssss"
-	                                },
-	                                {
-	                                    id: 2,
-	                                    nombre: "Fanta",
-	                                    precio: 3,
-	                                    descripcion: "Pruebassssssssss"
-	                                },
-	                                {
-	                                    id: 3,
-	                                    nombre: "Alfajor",
-	                                    precio: 2,
-	                                    descripcion: "Pruebassssssssss"
-	                                },
-	                                {
-	                                    id: 4,
-	                                    nombre: "Lavandina",
-	                                    precio: 2,
-	                                    descripcion: "Pruebassssssssss"
-	                                }];
+            $scope.url = "http://localhost:53480/api/Producto/ObtenerTodos";
+            $scope.productos = [];
 
-            //remoteResources.list($scope.url).then(function (productos) {                
-            //    $scope.productos = productos;
-            //});
+            remoteResources.list($scope.url).then(function (productos) {                
+                $scope.productos = productos;
+            });
 
         }
     ]);

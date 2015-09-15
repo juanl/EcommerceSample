@@ -6,10 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApiProject.Controllers
 {
-    [Authorize]
+    //[EnableCors(origins: "http://localhost:53480", headers: "*", methods: "*", exposedHeaders: "X-Custom-Header")]    
     [RoutePrefix("api/Categoria")]
     public class CategoriaController : ApiController
     {
@@ -24,7 +25,8 @@ namespace WebApiProject.Controllers
             CategoriaServicio serv = new CategoriaServicio();
             CategoriaDTO categoria = serv.ObtenerPorId(categoriaId);
             return categoria;
-        }
+        }        
+        [HttpGet]
         public IList<CategoriaDTO> ObtenerTodos()
         {
             CategoriaServicio serv = new CategoriaServicio();
